@@ -16,7 +16,7 @@
 
 ## Baselines & Models
 
-- Baselines: last value; seasonal naïve (daily seasonality)
+- Baselines: "t" (current value) and "t-1" (last value)
 - Chronos: default quantiles 0.1–0.9 to produce fan charts
 - Toto: varied sampling; (32, 4) highlighted as speed/quality sweet spot
 
