@@ -60,3 +60,12 @@ Notes
 - Time units in exported CSVs may be milliseconds or seconds depending on source tool.
 - Chronos fan charts are rendered from the 0.1–0.9 quantiles.
 - Toto results reflect different sampling configs; (32, 4) is a good trade‑off.
+
+## Baselines Per Horizon
+
+- Definition: Let the last observed value at the forecast origin be `y_t`, and the previous value be `y_{t-1}`. For a horizon `H` (e.g., 64/128/256/336), the baselines are:
+  - "t" baseline (persistence): for all `h = 1..H`, `ŷ_{t+h} = y_t`.
+  - "t-1" baseline: for all `h = 1..H`, `ŷ_{t+h} = y_{t-1}`.
+- Usage: These baselines produce a full `H`-step forecast vector by repeating a single observed value across all steps.
+- Metrics: MASE and CRPS are computed per horizon window using these baseline definitions for comparison.
+- Edge cases: If `y_{t-1}` is not available (very early in the series), the "t-1" baseline is skipped or marked N/A for that origin.
