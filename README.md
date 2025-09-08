@@ -47,8 +47,8 @@
 
 - Toto Time: Toto inference time for the horizon (ms or s, as exported)
 - Chronos Time: Chronos inference time for the horizon
-- Toto MASE: MASE for Toto’s point forecast vs naïve
-- Chronos MASE: MASE for Chronos’s point forecast vs naïve
+- Toto MASE: MASE for Toto’s point forecast vs t baseline
+- Chronos MASE: MASE for Chronos’s point forecast vs t baseline
 - Toto CRPS: CRPS for Toto’s predictive distribution
 - Chronos CRPS: CRPS for Chronos’s predictive distribution
 - Input Length: Context length used for inference
